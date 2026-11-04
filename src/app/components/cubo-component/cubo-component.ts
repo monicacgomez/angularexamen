@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Cubo } from '../../models/cubo';
 
 @Component({
@@ -13,4 +13,12 @@ export class CuboComponent {
   // Input me permite recibir la info desde otro component
   // Cubo es el objeto que recibiré
   @Input() cubo!: Cubo
+
+  // Output permite enviar info al componente padre
+  @Output() favoritoSeleccionado = new EventEmitter<Cubo>();
+
+  // Envío el cubo seleccionado al padre
+  seleccionarFavorito(): void {
+    this.favoritoSeleccionado.emit(this.cubo);
+  }
 }

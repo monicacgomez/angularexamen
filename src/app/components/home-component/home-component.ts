@@ -11,16 +11,16 @@ import { Cubo } from '../../models/cubo';
 
 // OnInit permite ejecutar código cuando se inicia el componente
 export class HomeComponent implements OnInit {
-
   // Cubo importa el modelo y "Cubos" es la variable donde guardaré los datos
   public cubos!: Cubo[];
+  public cuboFavorito: Cubo | null = null;
 
   // ServiceCubos importa el servicio
   constructor(
     private service: ServiceCubos,
     private cdr: ChangeDetectorRef
   ) {}
-  
+
   // ngOnInit solicita los cubos a través de getCubos
   // subscribe, recibo la respuesta del API y la guardo en this.cubos
   ngOnInit(): void {
@@ -42,5 +42,9 @@ export class HomeComponent implements OnInit {
       this.cubos = response;
       this.cdr.detectChanges();
     });
+  }
+
+  seleccionarFavorito(cubo: Cubo): void {
+    this.cuboFavorito = cubo;
   }
 }

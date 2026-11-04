@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
   seleccionarMarca(marca: string): void {
     this.service.getCubosMarca(marca).subscribe(response => {
       this.cubos = response;
-    })
+      this.cdr.detectChanges();
+    });
   }
-
 }

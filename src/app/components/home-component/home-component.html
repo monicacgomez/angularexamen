@@ -1,4 +1,11 @@
 <div>
   <h1>Tienda de cubos de Rubik</h1>
   <p> Bienvenido a nuestra tienda de cubos de Rubik, ¡encuentra tu favorito! </p>
+  
+  <div *ngFor="let cubo of cubos">
+    <img [src]="cubo.imagen" [alt]="" width="100">
+    <h2>{{cubo.nombre}}</h2>
+    <p> Precio: {{cubo.precio}} € </p>
+  </div>
+  
 </div>

@@ -21,8 +21,14 @@ export class HomeComponent implements OnInit {
   // ngOnInit solicita los cubos a través de getCubos
   // subscribe, recibo la respuesta del API y la guardo en this.cubos
   ngOnInit(): void {
-    this.service.getCubos().subscribe(response => {
-      this.cubos = response;
+    this.service.getCubos().subscribe({
+      next: response => {
+        this.cubos = response;
+        console.log("Cubos recibidos:", response);
+      },
+      error: error => {
+        console.log("Error al cargar los cubos", error);
+      }
     });
   }
 }

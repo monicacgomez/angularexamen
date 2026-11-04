@@ -11,6 +11,7 @@ import { PerfilComponent } from './components/perfil-component/perfil-component'
 import { ComprasComponent } from './components/compras-component/compras-component';
 import { RealizarComprasComponent } from './components/realizar-compras-component/realizar-compras-component';
 import { MenuComponent } from './components/menu-component/menu-component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { MenuComponent } from './components/menu-component/menu-component';
     RealizarComprasComponent,
     MenuComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
 })

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ServiceCubos } from '../../services/service.cubos';
 import { Cubo } from '../../models/cubo';
 
@@ -16,7 +16,10 @@ export class HomeComponent implements OnInit {
   public cubos!: Cubo[];
 
   // ServiceCubos importa el servicio
-  constructor(private service: ServiceCubos) {}
+  constructor(
+    private service: ServiceCubos,
+    private cdr: ChangeDetectorRef
+  ) {}
   
   // ngOnInit solicita los cubos a través de getCubos
   // subscribe, recibo la respuesta del API y la guardo en this.cubos
@@ -25,6 +28,7 @@ export class HomeComponent implements OnInit {
       next: response => {
         this.cubos = response;
         console.log("Cubos recibidos:", response);
+        this.cdr.detectChanges();
       },
       error: error => {
         console.log("Error al cargar los cubos", error);

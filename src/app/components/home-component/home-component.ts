@@ -31,4 +31,12 @@ export class HomeComponent implements OnInit {
       }
     });
   }
+
+  // Recibo la marca seleccionada y filtro los cubos
+  seleccionarMarca(marca: string): void {
+    this.service.getCubosMarca(marca).subscribe(response => {
+      this.cubos = response;
+    })
+  }
+
 }

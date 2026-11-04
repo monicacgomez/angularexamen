@@ -1,7 +1,18 @@
 <div>
   <h1>Tienda de cubos de Rubik</h1>
   <p> Bienvenido a nuestra tienda de cubos de Rubik, ¡encuentra tu favorito! </p>
-  
+
+  <!-- Menú de marcas-->
+   <app-menu-marcas-component
+
+   // marcaSeleccionada evento que emite el hijo
+   // $event contiene la marca seleccionada
+   // seleccionarMarca($event) ejecuta el método del padre enviándole la marca
+   (marcaSeleccionada)="seleccionarMarca($event)">
+   
+  </app-menu-marcas-component>
+
+  <!-- Catálogo de cubos-->
   <div *ngFor="let cubo of cubos">
     <app-cubo-component [cubo]="cubo"></app-cubo-component>
   </div>

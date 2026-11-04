@@ -1,29 +1,31 @@
-  <div class = "bg-white rounded-lg shadow-md p-4 border border-gray-200">
-    
-    <!-- Imagen del cubo -->
-    <img [src]="cubo.imagen" [alt]="cubo.nombre" class="w-full h-48 object-contain">
-    
-    <!-- Nombre -->
-    <h2 class="text-xl font-bold text-gray-800 mt-3">
-      {{cubo.nombre}}
-    </h2>
+<div class="cubo-card">
 
-    <!-- Info -->
-    <p class="text-gray-600 mt-2"> 
-      Modelo: {{cubo.modelo}}
-    </p>
+  <!-- Imagen del cubo -->
+  <img [src]="cubo.imagen"
+       [alt]="cubo.nombre"
+       class="cubo-imagen">
 
-    <p class="text-gray-600"> 
-      Marca: {{cubo.marca}}
-    </p>
+  <!-- Nombre -->
+  <h2 class="cubo-titulo">
+    {{cubo.nombre}}
+  </h2>
 
-    <p class="text-gray-600">  
-      Color: {{cubo.color}}
-    </p>
+  <!-- Información -->
+  <p class="cubo-info">
+    Modelo: {{cubo.modelo}}
+  </p>
 
-    <!-- Precio -->
-    <p class="text-blue-700 font-bold text-lg mt-3"> 
-      {{cubo.precio}} € 
-    </p>
+  <p class="cubo-info">
+    Marca: {{cubo.marca}}
+  </p>
 
-  </div>
+  <p class="cubo-info">
+    Color: {{cubo.color}}
+  </p>
+
+  <!-- Precio -->
+  <p class="cubo-precio">
+    {{cubo.precio}} €
+  </p>
+
+</div>

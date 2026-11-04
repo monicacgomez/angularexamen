@@ -1,1 +1,26 @@
+<nav class="navbar">
+
+  <!-- Nombre de la tienda -->
+  <div class="navbar-logo">
+    <span class="logo-icon">🧊</span>
+    <span>Tienda de Cubos</span>
+  </div>
+
+  <!-- Enlaces de navegación -->
+  <div class="navbar-enlaces">
+    <a routerLink="/" routerLinkActive="activo"
+       [routerLinkActiveOptions]="{ exact: true }">
+      Inicio
+    </a>
+
+    <a routerLink="/cubos" routerLinkActive="activo">
+      Cubos
+    </a>
+
+    <a routerLink="/marcas" routerLinkActive="activo">
+      Marcas
+    </a>
+  </div>
+
+</nav>
 

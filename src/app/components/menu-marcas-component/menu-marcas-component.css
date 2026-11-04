@@ -1,0 +1,77 @@
+:host {
+  display: block;
+  font-family: Arial, sans-serif;
+  color: #526D85;
+}
+
+/* Contenedor */
+.marcas-container {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Título */
+.marcas-titulo {
+  margin: 5px 0 18px;
+  color: #78A9D6;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* Lista de marcas */
+.marcas-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Elementos de la lista */
+.marcas-lista li {
+  margin: 0;
+}
+
+/* Botones */
+.marca-boton {
+  padding: 11px 22px;
+  background-color: #B9D8F2;
+  color: #526D85;
+  border: 1px solid #C8E0F3;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Hover */
+.marca-boton:hover {
+  background-color: #9FC7E8;
+  color: #405F7B;
+  border-color: #85B6DE;
+  transform: translateY(-2px);
+}
+
+/* Al pulsar */
+.marca-boton:active {
+  background-color: #85B6DE;
+  transform: scale(0.97);
+}
+
+/* Adaptación a móviles */
+@media (max-width: 600px) {
+  .marcas-titulo {
+    font-size: 20px;
+  }
+
+  .marcas-lista {
+    gap: 8px;
+  }
+
+  .marca-boton {
+    padding: 9px 15px;
+    font-size: 13px;
+  }
+}

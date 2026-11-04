@@ -1,0 +1,80 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  padding: 28px;
+  font-family: Arial, sans-serif;
+  color: #526D85;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+/* Contenedor principal */
+.tienda-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Título principal */
+.tienda-titulo {
+  margin: 10px 0 14px;
+  color: #78A9D6;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+/* Descripción */
+.tienda-descripcion {
+  margin-bottom: 28px;
+  color: #526D85;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Menú de marcas */
+.menu-marcas {
+  margin-bottom: 28px;
+  padding: 18px;
+  background-color: #EFF7FF;
+  border: 1px solid #C8E0F3;
+  border-radius: 10px;
+}
+
+/* Catálogo de cubos */
+.catalogo-cubos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  padding: 12px 0;
+}
+
+/* Adaptación a tablets */
+@media (max-width: 900px) {
+  .catalogo-cubos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Adaptación a móviles */
+@media (max-width: 600px) {
+  :host {
+    padding: 18px;
+  }
+
+  .tienda-titulo {
+    font-size: 25px;
+  }
+
+  .tienda-descripcion {
+    font-size: 14px;
+  }
+
+  .menu-marcas {
+    padding: 12px;
+  }
+
+  .catalogo-cubos {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}

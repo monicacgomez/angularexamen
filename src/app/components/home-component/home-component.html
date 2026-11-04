@@ -8,8 +8,10 @@
   </app-menu-marcas-component>
 
   <!-- Catálogo de cubos-->
-  <div *ngFor="let cubo of cubos">
-    <app-cubo-component [cubo]="cubo"></app-cubo-component>
-  </div>
+   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+    
+    <div *ngFor="let cubo of cubos">
+      <app-cubo-component [cubo]="cubo"></app-cubo-component>
+    </div>
 
 </div>

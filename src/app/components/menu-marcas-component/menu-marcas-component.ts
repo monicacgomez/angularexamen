@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ServiceCubos } from '../../services/service.cubos';
 
 @Component({
@@ -13,6 +13,11 @@ export class MenuMarcasComponent implements OnInit {
   // Array donde guardar las marcas
   public marcas!: string[];
 
+  // Envío la marca al component padre
+  // Output me permite comunicar el hijo con el padre
+  // EventEmitter emite un dato con tipo txt
+  @Output() marcaSeleccionada = new EventEmitter<string>();
+
   // Importar el service
   constructor (private service: ServiceCubos) {}
 
@@ -22,5 +27,12 @@ export class MenuMarcasComponent implements OnInit {
       this.marcas = response;
       console.log("Marcas recibidas", response);
     });
+  }
+
+  // Emito la marca seleccionada
+  // seleccionarMarca es el método que ejecuto al pulsar una marca
+  seleccionarMarca(marca:string): void {
+    // emit(marca) envía la marca seleccionada
+    this.marcaSeleccionada.emit(marca);
   }
 }
